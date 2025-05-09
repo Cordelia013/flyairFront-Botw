@@ -2,7 +2,7 @@
 
 export default {
   name: 'destination',
-  title: 'Destinations',
+  title: 'Tours',
   type: 'document',
   fields: [
   
