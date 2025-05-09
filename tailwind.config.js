@@ -1,5 +1,5 @@
 // tailwind.config.js
-const grid = require('./config/grid');
+const { gridConfig } = require('./lib/config/grid');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -14,23 +14,18 @@ module.exports = {
         sans: ['var(--font-geist-sans)'],
         mono: ['var(--font-geist-mono)'],
       },
+      screens: {
+        'sm': `${gridConfig.mobile.mockupWidth}px`,
+        'md': `${gridConfig.tablet.mockupWidth}px`,
+        'lg': `${gridConfig.desktop.mockupWidth}px`,
+      },
       spacing: {
-        // Ajouter les marges de la configuration de grille
-        'mobile-margin': `${grid.mobile.margin}px`,
-        'tablet-margin': `${grid.tablet.margin}px`,
-        'desktop-margin': `${grid.desktop.margin}px`,
-      },
-      maxWidth: {
-        // Ajouter les largeurs de mockup
-        'mobile': `${grid.mobile.mockupWidth}px`,
-        'tablet': `${grid.tablet.mockupWidth}px`,
-        'desktop': `${grid.desktop.mockupWidth}px`,
-      },
-      gap: {
-        // Ajouter les gouttières
-        'mobile': `${grid.mobile.gutter}px`,
-        'tablet': `${grid.tablet.gutter}px`,
-        'desktop': `${grid.desktop.gutter}px`,
+        'sm-gutter': `${gridConfig.mobile.gutter}px`,
+        'md-gutter': `${gridConfig.tablet.gutter}px`,
+        'lg-gutter': `${gridConfig.desktop.gutter}px`,
+        'sm-margin': `${gridConfig.mobile.margin}px`,
+        'md-margin': `${gridConfig.tablet.margin}px`,
+        'lg-margin': `${gridConfig.desktop.margin}px`,
       },
     },
   },

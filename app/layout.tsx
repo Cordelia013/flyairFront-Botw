@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
-import FullscreenGrid from "@/components/FullscreenGrid"; // Importe le composant
 
 // Définition des polices Geist
 const geistSans = Geist({
@@ -37,7 +36,7 @@ export default function RootLayout({
         </main>
         
         {/* Grille plein écran */}
-        <FullscreenGrid />
+      
       </body>
     </html>
   );
