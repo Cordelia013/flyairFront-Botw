@@ -1,42 +1,23 @@
-// config/grid.ts
-
-interface GridConfig {
-  [x: string]: any;
-  columns: number;
-  gutter: number;
-  margin: number;
-  mockupWidth: number;
-  fontScalingMaxWidth?: number;
-  screen?: string;
-  getContainerClass: () => string;
-  getGridClass: () => string;
-}
-
-
-
-
+// lib/config/grid.ts
 const grid = {
   mobile: {
-    columns: 6,
-    gutter: 10,
-    margin: 10,
-    mockupWidth: 375, // Largeur maximum pour mobile
-    // autres propriétés
+    columns: 4,        // Simplifié pour faciliter l'utilisation
+    gutter: 16,
+    margin: 16,
+    maxWidth: 375,
   },
   tablet: {
-    columns: 6,
-    gutter: 14, 
-    margin: 14,
-    mockupWidth: 768, // Largeur maximum pour tablette
-    // autres propriétés
+    columns: 8,
+    gutter: 24,
+    margin: 24,
+    maxWidth: 768,
   },
   desktop: {
-    columns: 18,
-    gutter: 8,
-    margin: 8, 
-    mockupWidth: 1440, // Largeur maximum pour desktop
-    // autres propriétés
-  },
-  // autres méthodes et propriétés
+    columns: 12,
+    gutter: 32,
+    margin: 32,
+    maxWidth: 1440,
+  }
 };
+
 export default grid;

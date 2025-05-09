@@ -1,4 +1,4 @@
-// app/hooks/useGrid.ts
+// hooks/useGrid.ts
 'use client'
 
 import { useState, useEffect } from 'react';
@@ -6,54 +6,32 @@ import gridConfig from '@/lib/config/grid';
 
 export function useGrid() {
   const [breakpoint, setBreakpoint] = useState<'mobile' | 'tablet' | 'desktop'>('mobile');
-  const [config, setConfig] = useState({
-    ...gridConfig.mobile,
-    getContainerClass: () => `w-full px-[${gridConfig.mobile.margin}px]`,
-    getGridClass: () => `grid grid-cols-${gridConfig.mobile.columns} gap-[${gridConfig.mobile.gutter}px]`
-  });
+  const [config, setConfig] = useState(gridConfig.mobile);
 
   useEffect(() => {
-    // Fonction qui détermine le breakpoint actuel
+    // Fonction pour mettre à jour le breakpoint en fonction de la taille de la fenêtre
     const updateBreakpoint = () => {
       const width = window.innerWidth;
       
       if (width >= 1024) {
         setBreakpoint('desktop');
-        setConfig({
-          ...gridConfig.desktop,
-          getContainerClass: () => `w-full px-[${gridConfig.desktop.margin}px]`,
-          getGridClass: () => `grid grid-cols-${gridConfig.desktop.columns} gap-[${gridConfig.desktop.gutter}px]`
-        });
+        setConfig(gridConfig.desktop);
       } else if (width >= 768) {
         setBreakpoint('tablet');
-        setConfig({
-          ...gridConfig.tablet,
-          getContainerClass: () => `w-full px-[${gridConfig.tablet.margin}px]`,
-          getGridClass: () => `grid grid-cols-${gridConfig.tablet.columns} gap-[${gridConfig.tablet.gutter}px]`
-        });
+        setConfig(gridConfig.tablet);
       } else {
         setBreakpoint('mobile');
-        setConfig({
-          ...gridConfig.mobile,
-          getContainerClass: () => `w-full px-[${gridConfig.mobile.margin}px]`,
-          getGridClass: () => `grid grid-cols-${gridConfig.mobile.columns} gap-[${gridConfig.mobile.gutter}px]`
-        });
+        setConfig(gridConfig.mobile);
       }
     };
 
-    // Initialiser au montage du composant
+    // Initialiser au chargement
     updateBreakpoint();
     
     // Mettre à jour lors du redimensionnement
     window.addEventListener('resize', updateBreakpoint);
-    
-    // Nettoyer l'écouteur d'événements
     return () => window.removeEventListener('resize', updateBreakpoint);
   }, []);
 
-  return {
-    config,
-    breakpoint,
-    allConfig: gridConfig
-  };
+  return { config, breakpoint };
 }

@@ -1,11 +1,9 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Suspense } from "react";
 import "./globals.css";
-import { GridProvider } from "@/components/layout/grid/GridContext";
-import GridControl from "@/components/layout/grid/GridControl";
-import GridVisualizer from "@/components/layout/grid/GridVisualizer";
+import Header from "@/components/layout/Header";
+import FullscreenGrid from "@/components/FullscreenGrid"; // Importe le composant
 
 // Définition des polices Geist
 const geistSans = Geist({
@@ -20,7 +18,6 @@ const geistMono = Geist_Mono({
   display: "swap", 
 });
 
-// Métadonnées
 export const metadata: Metadata = {
   title: "FlyAir - Voyagez en Corée",
   description: "Réservez des vols vers la Corée et découvrez ses plus beaux sites touristiques",
@@ -33,26 +30,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="min-h-screen">
-        <GridProvider>
-          {/* Contenu principal (z-index plus élevé que la grille) */}
-          <div className="relative z-10">
-            <Suspense fallback={<div className="flex items-center justify-center h-32">Chargement...</div>}>
-              {children}
-            </Suspense>
-          </div>
-          
-          {/* Grille de développement (uniquement en mode développement) */}
-          {process.env.NODE_ENV === 'development' && (
-            <>
-              <GridVisualizer />
-              <GridControl 
-                shortcutKey="g"
-                position="bottom-right"
-              />
-            </>
-          )}
-        </GridProvider>
+      <body className="min-h-screen w-screen">
+        <Header />
+        <main>
+          {children}
+        </main>
+        
+        {/* Grille plein écran */}
+        <FullscreenGrid />
       </body>
     </html>
   );
