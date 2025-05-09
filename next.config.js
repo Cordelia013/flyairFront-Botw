@@ -1,16 +1,16 @@
-// next.config.ts ou next.config.js pour newt 15X
+// next.config.js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
- 
+  // Active React Strict Mode
+  reactStrictMode: true,
+  
+  // Tes autres configurations existantes
   devIndicators: {
     position: 'bottom-right',
   },
-  // Cette configuration permet d'exposer ton serveur sur le réseau
-  // Ce n'est pas exactement la même chose mais peut résoudre ton problème
   async rewrites() {
     return {
       beforeFiles: [
-        // Ces règles permettront d'accéder depuis d'autres origines
         {
           source: '/:path*',
           has: [
