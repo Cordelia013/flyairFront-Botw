@@ -2,7 +2,7 @@
 'use client'
 
 import { ReactNode } from 'react';
-import { useGrid } from '@/app/hooks/useGrid';
+import { useGrid } from '@/hooks/useGrid';
 
 type GridProps = {
   children: ReactNode;

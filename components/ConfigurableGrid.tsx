@@ -6,19 +6,28 @@ import { useState, useEffect } from 'react';
 // Configuration par défaut
 const defaultConfig = {
   mobile: {
-    columns: 4,
-    gutter: 16,
-    margin: 16,
+    columns: 6,
+    gutter: 10,
+    margin: 10,
+    mockupWidth: 375,
+    fontScalingMaxWidth: 475,
+    screen: 'sm',
   },
   tablet: {
     columns: 8,
-    gutter: 24,
-    margin: 24,
+    gutter: 16,
+    margin: 12,
+    mockupWidth: 768,
+    fontScalingMaxWidth: 1024,
+    screen: 'md',
   },
   desktop: {
-    columns: 12,
-    gutter: 32,
-    margin: 32,
+    columns: 18,
+    gutter: 8,
+    margin: 8,
+    mockupWidth: 1440,
+    fontScalingMaxWidth: 1680,
+    
   }
 };
 
@@ -69,7 +78,7 @@ export default function ConfigurableGrid() {
           position: 'fixed',
           bottom: '16px',
           right: '16px',
-          backgroundColor: 'blue',
+          backgroundColor: 'grey',
           color: 'white',
           padding: '8px 16px',
           borderRadius: '4px',
@@ -82,12 +91,12 @@ export default function ConfigurableGrid() {
       </button>
       
       {/* Informations sur la grille */}
-      {showGrid && (
+      {/* {showGrid && (
         <div style={{
           position: 'fixed',
           top: '16px',
           left: '16px',
-          backgroundColor: 'rgba(17, 24, 39, 0.9)',
+          backgroundColor: 'rgb(27, 43, 76)',
           color: 'white',
           padding: '12px',
           borderRadius: '4px',
@@ -99,38 +108,36 @@ export default function ConfigurableGrid() {
           <div>Gouttière: <strong>{config.gutter}px</strong></div>
           <div>Marge: <strong>{config.margin}px</strong></div>
         </div>
-      )}
+      )} */}
       
       {/* Grille plein écran */}
       {showGrid && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100vw',
-          height: '100vh',
-          zIndex: 999,
-          pointerEvents: 'none',
-          display: 'grid',
-          gridTemplateColumns: `repeat(${config.columns}, 1fr)`,
-          gap: `${config.gutter}px`,
-          paddingLeft: `${config.margin}px`,
-          paddingRight: `${config.margin}px`,
-        }}>
+       <div style={{
+        position: 'fixed',
+        top: 0,
+        left: `${config.margin}px`,  // Marge à gauche
+        width: `calc(100vw - ${2 * config.margin}px)`,  // Largeur totale moins les marges
+        height: '100vh',
+        zIndex: 999,
+        pointerEvents: 'none',
+        display: 'grid',
+        gridTemplateColumns: `repeat(${config.columns}, 1fr)`,
+        gap: `${config.gutter}px`,
+      }}>
           {Array.from({ length: config.columns }).map((_, index) => (
             <div 
               key={index} 
               style={{
                 height: '100%',
-                backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                border: '1px dashed rgba(59, 130, 246, 0.4)',
+                backgroundColor: 'rgba(25, 61, 118, 0.1)',
+                border: '1px dashed rgba(59, 131, 246, 0.07)',
                 display: 'flex',
                 justifyContent: 'center',
               }}
             >
               <div style={{
                 fontSize: '12px',
-                color: 'rgb(59, 130, 246)',
+                color: 'rgb(225, 229, 235)',
                 marginTop: '16px',
                 fontWeight: 'bold',
               }}>

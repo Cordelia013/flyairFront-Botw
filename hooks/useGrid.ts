@@ -9,7 +9,6 @@ export function useGrid() {
   const [config, setConfig] = useState(gridConfig.mobile);
 
   useEffect(() => {
-    // Fonction pour mettre à jour le breakpoint en fonction de la taille de la fenêtre
     const updateBreakpoint = () => {
       const width = window.innerWidth;
       
@@ -25,13 +24,32 @@ export function useGrid() {
       }
     };
 
-    // Initialiser au chargement
     updateBreakpoint();
-    
-    // Mettre à jour lors du redimensionnement
     window.addEventListener('resize', updateBreakpoint);
     return () => window.removeEventListener('resize', updateBreakpoint);
   }, []);
 
-  return { config, breakpoint };
+  // Fonctions utilitaires pratiques
+  const getContainerStyle = (fullWidth = false) => {
+    return {
+      maxWidth: fullWidth ? '100%' : `${config.mockupWidth}px`,
+      marginLeft: `${config.margin}px`,
+      marginRight: `${config.margin}px`,
+    };
+  };
+
+  const getGridStyle = () => {
+    return {
+      display: 'grid',
+      gridTemplateColumns: `repeat(${config.columns}, 1fr)`,
+      gap: `${config.gutter}px`,
+    };
+  };
+
+  return { 
+    config, 
+    breakpoint, 
+    getContainerStyle, 
+    getGridStyle 
+  };
 }
