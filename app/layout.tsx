@@ -1,17 +1,23 @@
+
+
+ 
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 
+
 // Définition des polices Geist pour l'application
 const geistSans = Geist({
-  variable: "--font-geist-sans", // Permet d'utiliser la police via une variable CSS
-  subsets: ["latin"],           // Optimise le chargement pour le jeu de caractères latin
+  variable: "--font-geist-sans", 
+  subsets: ["latin"],
+  display: "swap", // Ajout important pour l'hydratation des polices
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono", // Police à chasse fixe pour code/éléments techniques
+  variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap", // Ajout important pour l'hydratation des polices
 });
 
 // Métadonnées de base pour le SEO
@@ -29,7 +35,7 @@ export default function RootLayout({
     <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
       {/* ☝️ J'ai ajouté les variables de police à la balise HTML */}
       <body>
-        <Suspense fallback={<div>Chargement...</div>}>
+      <Suspense fallback={null}>
           {children}
         </Suspense>
       </body>
