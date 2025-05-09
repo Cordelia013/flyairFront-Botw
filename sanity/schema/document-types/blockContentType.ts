@@ -2,12 +2,12 @@ import {defineType, defineArrayMember} from 'sanity'
 import {ImageIcon} from '@sanity/icons'
 
 /**
- * This is the schema type for block content used in the post document type
- * Importing this type into the studio configuration's `schema` property
- * lets you reuse it in other document types with:
+ * Ceci est le type de schéma pour le contenu en bloc utilisé dans le type de document post
+ * L'importation de ce type dans la propriété `schema` de la configuration du studio
+ * vous permet de le réutiliser dans d'autres types de documents avec :
  *  {
- *    name: 'someName',
- *    title: 'Some title',
+ *    name: 'nomQuelconque',
+ *    title: 'Un titre',
  *    type: 'blockContent'
  *  }
  */
@@ -19,10 +19,10 @@ export const blockContentType = defineType({
   of: [
     defineArrayMember({
       type: 'block',
-      // Styles let you define what blocks can be marked up as. The default
-      // set corresponds with HTML tags, but you can set any title or value
-      // you want, and decide how you want to deal with it where you want to
-      // use your content.
+      // Les styles vous permettent de définir comment les blocs peuvent être balisés. L'ensemble
+      // par défaut correspond aux balises HTML, mais vous pouvez définir n'importe quel titre ou valeur
+      // que vous souhaitez, et décider comment vous voulez les utiliser là où vous voulez
+      // utiliser votre contenu.
       styles: [
         {title: 'Normal', value: 'normal'},
         {title: 'H1', value: 'h1'},
@@ -32,15 +32,15 @@ export const blockContentType = defineType({
         {title: 'Quote', value: 'blockquote'},
       ],
       lists: [{title: 'Bullet', value: 'bullet'}],
-      // Marks let you mark up inline text in the Portable Text Editor
+      // Les marques vous permettent de baliser du texte en ligne dans l'éditeur Portable Text
       marks: {
-        // Decorators usually describe a single property – e.g. a typographic
-        // preference or highlighting
+        // Les décorateurs sont généralement une propriété unique – par exemple, un style typographique
+        // préférence ou un surlignement
         decorators: [
           {title: 'Strong', value: 'strong'},
           {title: 'Emphasis', value: 'em'},
         ],
-        // Annotations can be any object structure – e.g. a link or a footnote.
+        // Les annotations peuvent être n'importe quelle structure d'objet – par exemple, un lien ou une note de bas de page.
         annotations: [
           {
             title: 'URL',
@@ -57,9 +57,9 @@ export const blockContentType = defineType({
         ],
       },
     }),
-    // You can add additional types here. Note that you can't use
-    // primitive types such as 'string' and 'number' in the same array
-    // as a block type.
+    // Vous pouvez ajouter des types supplémentaires ici. Notez que vous ne pouvez pas utiliser
+    // des types primitifs comme 'string' et 'number' dans le même tableau
+    // qu'un type de bloc.
     defineArrayMember({
       type: 'image',
       icon: ImageIcon,
