@@ -5,9 +5,11 @@ import type { ReactNode } from 'react';
 import Container from "@/components/layout/Container";
 import Grid from "@/components/layout/Grid";
 
+
 export default function Home(): ReactNode {
   return (
     <Container>
+     
       <h1 className="text-3xl font-bold my-8">Bienvenue sur FlyAir</h1>
       
       <Grid>

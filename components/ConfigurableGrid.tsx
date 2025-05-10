@@ -7,24 +7,24 @@ import { useState, useEffect } from 'react';
 const defaultConfig = {
   mobile: {
     columns: 6,
-    gutter: 10,
-    margin: 10,
+    gutter: 4,
+    margin: 8,
     mockupWidth: 375,
     fontScalingMaxWidth: 475,
     screen: 'sm',
   },
   tablet: {
     columns: 8,
-    gutter: 16,
-    margin: 12,
+    gutter: 8,
+    margin: 16,
     mockupWidth: 768,
     fontScalingMaxWidth: 1024,
     screen: 'md',
   },
   desktop: {
-    columns: 18,
+    columns: 12,
     gutter: 8,
-    margin: 8,
+    margin: 16,
     mockupWidth: 1440,
     fontScalingMaxWidth: 1680,
     
@@ -135,9 +135,10 @@ export default function ConfigurableGrid() {
                 justifyContent: 'center',
               }}
             >
+              {/* chiffre sur la grille */}
               <div style={{
                 fontSize: '12px',
-                color: 'rgb(225, 229, 235)',
+                color: 'rgb(49, 50, 52)',
                 marginTop: '16px',
                 fontWeight: 'bold',
               }}>

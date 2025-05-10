@@ -19,9 +19,9 @@ export default function Container({
   
   return (
     <div 
-      className={`mx-auto ${className}`}
+      className={`mx-auto relative z-10 ${className}`}
       style={{
-        maxWidth: fullWidth ? '100%' : `${config.maxWidth}px`,
+        maxWidth: fullWidth ? '100%' : `${config.mockupWidth}px`,
         paddingLeft: `${config.margin}px`,
         paddingRight: `${config.margin}px`,
       }}
