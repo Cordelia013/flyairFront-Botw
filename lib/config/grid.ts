@@ -69,32 +69,3 @@ export const breakpoints = {
 
 // Exporter la configuration par défaut
 export default gridConfig;
-/**
- * Calculer la largeur utilisable de la grille
- * (largeur totale moins les marges)
- */
-export const getUsableWidth = (config: GridConfig): number => {
-  return config.mockupWidth - (2 * config.margin);
-};
-
-/**
- * Calculer la largeur d'une colonne
- * (largeur utilisable divisée par le nombre de colonnes, moins la gouttière)
- */
-export const getColumnWidth = (config: GridConfig): number => {
-  const usableWidth = getUsableWidth(config);
-  const totalGutterWidth = (config.columns - 1) * config.gutter;
-  return (usableWidth - totalGutterWidth) / config.columns;
-};
-
-/**
- * Utilitaires pour les médias queries
- */
-export const breakpoints = {
-  mobile: `(min-width: 0px)`,
-  tablet: `(min-width: ${gridConfig.tablet.mockupWidth}px)`,
-  desktop: `(min-width: ${gridConfig.desktop.mockupWidth}px)`,
-};
-
-// Exporter la configuration par défaut
-export default gridConfig;
