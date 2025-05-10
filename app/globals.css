@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 /* Variables globales pour les couleurs et les polices */
 :root {
   --background: #ffffff;
@@ -67,7 +69,8 @@ body::before {
   z-index: 0; /* Place l'overlay au-dessus de l'image mais sous le contenu */
   
   /* Masque pour créer une ellipse transparente avec bordure blanche */
-  mask-image: radial-gradient(
+  /* Écrans exttra-larges (1440px et plus) */
+ mask-image: radial-gradient(
     ellipse 271px 260.5px at 60% 42%,
     transparent 90%,
     white 90%,
@@ -75,53 +78,94 @@ body::before {
     black 92%
   );
   -webkit-mask-image: radial-gradient(
-    ellipse 271px 260.5px at 60% 42%,
+    ellipse 281px 280px at 58% 45%,
     transparent 90%,
     white 90%,
     white 95%, 
     black 92%
   );
-}
+} 
+
+/* Écrans larges (1440px et plus) */
+/* @media screen and (min-width: 1439px)and (max-width: 1680px) {
+  body::before {
+    mask-image: radial-gradient(
+      ellipse 300px 285px at 58% 42%,
+      transparent 90%,
+      white 90%,
+      white 95%,
+      black 92%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 225px 235px at 59% 42%,
+      transparent 90%,
+      white 90%,
+      white 95%, 
+      black 92%
+    );
+  }
+} */
+
+/* Desktop (1024px - 1440px) */
+/* @media screen and (min-width: 1025px) and (max-width: 1439px) {
+  body::before {
+    mask-image: radial-gradient(
+      ellipse 271px 260.5px at 60% 42%,
+      transparent 90%,
+      white 90%,
+      white 95%,
+      black 92%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 261px 271px at 62% 40%,
+      transparent 90%,
+      white 90%,
+      white 95%, 
+      black 92%
+    );
+  }
+} */
+
 
 /* Tablette (768px - 1024px) */
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   body::before {
     mask-image: radial-gradient(
-      ellipse 200px 192px at 65% 45%,
+      ellipse 195px 202px at 63% 45%,
       transparent 90%,
       white 90%,
       white 95%,
       black 92%
     );
     -webkit-mask-image: radial-gradient(
-      ellipse 200px 192px at 65% 45%,
+      ellipse 195px 202px at 63% 45%,
       transparent 90%,
       white 90%,
       white 95%, 
       black 92%
     );
   }
-}
+} */
 
-/* Mobile (jusqu'à 767px) */
-@media screen and (max-width: 767px) {
+/* Mobile (jusqu'à 766px inclus) */
+/* @media screen and (max-width: 767px) {
   body::before {
     mask-image: radial-gradient(
-      ellipse 150px 144px at 70% 50%,
+      ellipse 155px 164px at 61% 48%,
       transparent 90%,
       white 90%,
       white 95%,
       black 92%
     );
     -webkit-mask-image: radial-gradient(
-      ellipse 150px 144px at 70% 50%,
+      ellipse 155px 164px at 61% 48%,
       transparent 90%,
       white 90%,
       white 95%, 
       black 92%
     );
   }
-}
+} */
 
 /* Création de l'ellipse avec bordure */
 /* body::after {
