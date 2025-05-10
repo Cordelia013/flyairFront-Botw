@@ -1,7 +1,7 @@
 // components/layout/GridControl.tsx (extension)
 'use client'
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useGridContext } from '@/components/layout/ClientContent';
 
 

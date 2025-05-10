@@ -2,7 +2,7 @@
 'use client'
 
 import { useGrid } from '@/hooks/useGrid';
-import gridConfig from '@/lib/config/grid';
+
 
 type ClientContentProps = {
   showInfo?: boolean;

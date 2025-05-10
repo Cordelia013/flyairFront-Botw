@@ -1,10 +1,11 @@
 // lib/sanity.client.ts
 import { client } from './sanity';
 import imageUrlBuilder from '@sanity/image-url';
+import type { SanityImageSource } from '@sanity/image-url/lib/types/types';
 
 // Configuration de l'image builder
 const builder = imageUrlBuilder(client);
-export const urlFor = (source: any) => builder.image(source);
+export const urlFor = (source: SanityImageSource) => builder.image(source);
 
 // Récupérer toutes les destinations
 export async function getDestinations() {

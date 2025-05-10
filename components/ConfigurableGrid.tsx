@@ -91,7 +91,7 @@ export default function ConfigurableGrid() {
       </button>
       
       {/* Informations sur la grille */}
-      {/* {showGrid && (
+      {showGrid && (
         <div style={{
           position: 'fixed',
           top: '16px',
@@ -108,7 +108,7 @@ export default function ConfigurableGrid() {
           <div>Gouttière: <strong>{config.gutter}px</strong></div>
           <div>Marge: <strong>{config.margin}px</strong></div>
         </div>
-      )} */}
+      )}
       
       {/* Grille plein écran */}
       {showGrid && (
