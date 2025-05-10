@@ -1,6 +1,7 @@
 // contexts/GridContext.tsx
 'use client'
 
+import React from 'react';
 import { createContext, useState, useContext, ReactNode } from 'react';
 
 type GridContextType = {
