@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "./mediaQueries.css";
-import Header from "@/components/layout/Header";
+
 import ConfigurableGrid from "@/components/ConfigurableGrid";
  
 
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="min-h-screen w-screen">
-        <Header />
+     
         <main>
           {children}
         </main>

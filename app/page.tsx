@@ -4,12 +4,13 @@
 import type { ReactNode } from 'react';
 import Container from "@/components/layout/Container";
 import Grid from "@/components/layout/Grid";
+import Header from '@/components/layout/Header';
 
 
 export default function Home(): ReactNode {
   return (
     <Container>
-     
+        <Header />
       <h1 className="text-3xl font-bold my-8">Bienvenue sur FlyAir</h1>
       
       <Grid>

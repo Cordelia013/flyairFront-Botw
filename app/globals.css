@@ -27,7 +27,7 @@
 html, body {
   height: 100%;
   width: 100%;
-  margin: 0;
+  margin: auto;
   padding: 0;
   overflow-x: hidden;
 }
@@ -86,103 +86,30 @@ body::before {
   );
 } 
 
-/* Écrans larges (1440px et plus) */
-/* @media screen and (min-width: 1439px)and (max-width: 1680px) {
-  body::before {
-    mask-image: radial-gradient(
-      ellipse 300px 285px at 58% 42%,
-      transparent 90%,
-      white 90%,
-      white 95%,
-      black 92%
-    );
-    -webkit-mask-image: radial-gradient(
-      ellipse 225px 235px at 59% 42%,
-      transparent 90%,
-      white 90%,
-      white 95%, 
-      black 92%
-    );
-  }
-} */
-
-/* Desktop (1024px - 1440px) */
-/* @media screen and (min-width: 1025px) and (max-width: 1439px) {
-  body::before {
-    mask-image: radial-gradient(
-      ellipse 271px 260.5px at 60% 42%,
-      transparent 90%,
-      white 90%,
-      white 95%,
-      black 92%
-    );
-    -webkit-mask-image: radial-gradient(
-      ellipse 261px 271px at 62% 40%,
-      transparent 90%,
-      white 90%,
-      white 95%, 
-      black 92%
-    );
-  }
-} */
-
-
-/* Tablette (768px - 1024px) */
-/* @media screen and (max-width: 1024px) {
-  body::before {
-    mask-image: radial-gradient(
-      ellipse 195px 202px at 63% 45%,
-      transparent 90%,
-      white 90%,
-      white 95%,
-      black 92%
-    );
-    -webkit-mask-image: radial-gradient(
-      ellipse 195px 202px at 63% 45%,
-      transparent 90%,
-      white 90%,
-      white 95%, 
-      black 92%
-    );
-  }
-} */
-
-/* Mobile (jusqu'à 766px inclus) */
-/* @media screen and (max-width: 767px) {
-  body::before {
-    mask-image: radial-gradient(
-      ellipse 155px 164px at 61% 48%,
-      transparent 90%,
-      white 90%,
-      white 95%,
-      black 92%
-    );
-    -webkit-mask-image: radial-gradient(
-      ellipse 155px 164px at 61% 48%,
-      transparent 90%,
-      white 90%,
-      white 95%, 
-      black 92%
-    );
-  }
-} */
-
-/* Création de l'ellipse avec bordure */
-/* body::after {
-  content: '';
-  position: fixed;
-  top: 165px;
-  left: 606px;
-  width: 582px;
-  height: 581px;
-  border: 2px solid white;
-  border-radius: 50%;
-  z-index: 1;
-  pointer-events: none;
-} */
-
 /* Assure que le contenu reste au-dessus de l'overlay */
 body > * {
   position: relative;
   z-index: 2;
+}
+
+ul,li{
+  list-style: none;
+}
+
+li {
+  position: relative;
+    text-align: center;
+    gap: 10px;
+}
+
+li::before {
+  content: '[ ';
+  position: absolute;
+  margin-left: -10px;
+}
+
+li::after {
+  content: ' ]';
+  position: absolute;
+  margin-left: 5px;
 }
