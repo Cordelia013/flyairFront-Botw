@@ -1,22 +1,21 @@
-// hooks/useGrid.ts
+// app/hooks/useGrid.ts
 'use client'
 
 import { useState, useEffect } from 'react';
-import gridConfig from '@/lib/config/grid';
+import gridConfig, { Breakpoint, GridConfig } from '@/lib/config/grid';
 
 export function useGrid() {
-  const [breakpoint, setBreakpoint] = useState<'mobile' | 'tablet' | 'desktop'>('mobile');
-  const [config, setConfig] = useState(gridConfig.mobile);
+  const [breakpoint, setBreakpoint] = useState<Breakpoint>('mobile');
+  const [config, setConfig] = useState<GridConfig>(gridConfig.mobile);
 
   useEffect(() => {
-    // Fonction pour mettre à jour le breakpoint en fonction de la taille de la fenêtre
     const updateBreakpoint = () => {
       const width = window.innerWidth;
       
-      if (width >= 1024) {
+      if (width >= gridConfig.desktop.mockupWidth) {
         setBreakpoint('desktop');
         setConfig(gridConfig.desktop);
-      } else if (width >= 768) {
+      } else if (width >= gridConfig.tablet.mockupWidth) {
         setBreakpoint('tablet');
         setConfig(gridConfig.tablet);
       } else {
@@ -25,10 +24,7 @@ export function useGrid() {
       }
     };
 
-    // Initialiser au chargement
     updateBreakpoint();
-    
-    // Mettre à jour lors du redimensionnement
     window.addEventListener('resize', updateBreakpoint);
     return () => window.removeEventListener('resize', updateBreakpoint);
   }, []);
