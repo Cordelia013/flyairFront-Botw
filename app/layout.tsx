@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
 import "./mediaQueries.css";
-import "../components/home/Home.css";
+import "./home/Home.css";
 
 import ConfigurableGrid from "@/components/ConfigurableGrid";
 
