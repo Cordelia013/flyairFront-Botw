@@ -20,11 +20,7 @@ const ppNeueMontreal = localFont({
       weight: '500',
       style: 'normal',
     },
-    {
-      path: '../font/pp-neue-montreal/PPNeueMontreal-Bold.woff',
-      weight: '700',
-      style: 'normal',
-    }
+   
   ],
   variable: '--font-pp-neue-montreal',
   display: 'swap',
