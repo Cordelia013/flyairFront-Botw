@@ -11,12 +11,12 @@ import ConfigurableGrid from "@/components/ConfigurableGrid";
 const ppNeueMontreal = localFont({
   src: [
     {
-      path: '../font/pp-neue-montreal/ppneuemontreal-thin.woff',
+      path: '../public/font/pp-neue-montreal/ppneuemontreal-thin.woff',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../font/pp-neue-montreal/PPNeueMontreal-Medium.woff',
+      path: '../public/font/pp-neue-montreal/PPNeueMontreal-Medium.woff',
       weight: '500',
       style: 'normal',
     },
