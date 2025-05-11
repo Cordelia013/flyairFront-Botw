@@ -43,7 +43,7 @@ const ppPangaia = localFont({
       style: 'italic',
     },
     {
-      path: '/font/pp-pangaia-webfont/PPangaia-UltralightItalic.woff', 
+      path: './font/pp-pangaia-webfont/PPangaia-UltralightItalic.woff', 
       weight: '100',
       style: 'italic',
     }
