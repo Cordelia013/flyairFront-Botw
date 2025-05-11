@@ -63,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className={`${ppNeueMontreal.variable} ${ppPangaia.variable}`}>
+    <html lang="fr" className={`${ppPangaia.variable} ${ppNeueMontreal.variable}`}>
       <body className="min-h-screen w-screen">
         <main>
           {children}
