@@ -15,7 +15,8 @@ export default function Container({
   children,
   className = '', 
   fullWidth = false,
-  as: Component = 'div' as never
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  as: __Component = 'div' as never
 }: ContainerProps) {
   const { config } = useGrid();
   return (
