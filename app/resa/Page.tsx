@@ -1,5 +1,5 @@
 // app/resa/page.tsx  
-import Resa from "@/components/resa/resa";
+import Resa from "@/components/resa/Resa";
 import Container from "@/components/layout/Container";
 import Header from "@/components/layout/Header";
 

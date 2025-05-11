@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-export default function PNavigation(){
+
+export default function Navigation(){
     return (
         <div className=" ">
         <ul className="grid grid-cols-12 justify-end mt-8 text-[8px] md:text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[16px]">
