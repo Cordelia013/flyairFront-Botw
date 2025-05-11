@@ -92,6 +92,15 @@ body > * {
   z-index: 2;
 }
 
+
+  h1{
+    font-family: var(--font-pp-pangaia);
+    font-weight: 500;
+    font-size:96px;
+    line-height: 100%;
+  font-style: italic;
+  }
+
 ul,li{
   list-style: none;
 }

@@ -4,23 +4,24 @@ import localFont from 'next/font/local';
 import "./globals.css";
 import "./mediaQueries.css";
 
+
 import ConfigurableGrid from "@/components/ConfigurableGrid";
 
 // Définition des polices locales
 const ppNeueMontreal = localFont({
   src: [
     {
-      path: '../public/font/pp-neue-montreal/PPNeueMontreal-Regular.woff2',
+      path: '../public/font/pp-neue-montreal/ppneuemontreal-thin.woff',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../public/font/pp-neue-montreal/PPNeueMontreal-Medium.woff2',
+      path: '../public/font/pp-neue-montreal/PPNeueMontreal-Medium.woff',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../public/font/pp-neue-montreal/PPNeueMontreal-Bold.woff2',
+      path: '../public/font/pp-neue-montreal/PPNeueMontreal-Bold.woff',
       weight: '700',
       style: 'normal',
     }
@@ -30,7 +31,23 @@ const ppNeueMontreal = localFont({
 });
 
 const ppPangaia = localFont({
-  src: '../public/font/pp-pangaia-webfont/PPPangaia-Regular.woff2',
+  src: [
+    {
+      path: '../public/font/pp-pangaia-webfont/PPangaia-Medium-BF654c530cc86d5.woff',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../public/font/pp-pangaia-webfont/PPangaia-MediumItalic.woff',
+      weight: '500', 
+      style: 'italic',
+    },
+    {
+      path: '../public/font/pp-pangaia-webfont/PPangaia-UltralightItalic.woff', 
+      weight: '100',
+      style: 'italic',
+    }
+  ],
   variable: '--font-pp-pangaia',
   display: 'swap',
 });
