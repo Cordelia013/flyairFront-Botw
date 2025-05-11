@@ -35,18 +35,7 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   
-  /* Configuration de l'image de fond */
-  background-image: url('/assets/imgHome2.png');
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-height: 100vh;
-  width: 100vw;
+
 }
 
 /* Création de l'overlay avec effet de flou et cercle transparent */
