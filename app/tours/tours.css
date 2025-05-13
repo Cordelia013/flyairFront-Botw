@@ -1,0 +1,43 @@
+body {
+    background-color: rgba(0, 0, 0, 0.20);
+    background-image: url('/assets/bg1.png') !important;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+     background-attachment: fixed;
+    min-height: 100vh;
+    width: 100vw;
+}
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000; /* Couleur de base de l'overlay */
+    
+    /* Effet de flou sur l'arrière-plan */
+    backdrop-filter: blur(1px); /* Effet de flou */
+    -webkit-backdrop-filter: blur(24.9px); /* Support pour Safari */
+    opacity: 0.8; /* Transparence de l'overlay */
+    z-index: 0; /* Place l'overlay au-dessus de l'image mais sous le contenu */
+    
+
+ mask-image: radial-gradient(
+    ellipse 0px 0px at 60% 42%,
+    transparent 90%,
+    white 90%,
+    white 95%,
+    black 92%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 0px 0px at 58% 45%,
+    transparent 90%,
+    white 90%,
+    white 95%, 
+    black 92%
+  );
+
+
+  } 
