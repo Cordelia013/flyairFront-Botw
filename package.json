@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "vercel": "vercel --prod",
+    "status": "vercel inspect",
+    "remove": "vercel remove",
+    "deploy": "vercel --prod --yes"
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
