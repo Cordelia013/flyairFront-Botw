@@ -7,11 +7,11 @@ const nextConfig = {
     position: 'bottom-right',
   },
   
-    // Ajout de la configuration allowedDevOrigins
-    allowedDevOrigins: [
-      'http://10.0.8.10',
-      'https://10.0.8.10',
-  ],
+  //   // Ajout de la configuration allowedDevOrigins
+  //   allowedDevOrigins: [
+  //     'http://10.0.8.10',
+  //     'https://10.0.8.10',
+  // ],
 
   
   // Tes autres configurations existantes
@@ -19,23 +19,23 @@ const nextConfig = {
     position: 'bottom-right',
   },
 
-  async rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: '/:path*',
-          has: [
-            {
-              type: 'header',
-              key: 'host',
-              value: '10.0.7.10',
-            },
-          ],
-          destination: '/:path*',
-        },
-      ],
-    };
-  },
+  // async rewrites() {
+  //   return {
+  //     beforeFiles: [
+  //       {
+  //         source: '/:path*',
+  //         has: [
+  //           {
+  //             type: 'header',
+  //             key: 'host',
+  //             value: '10.0.7.10',
+  //           },
+  //         ],
+  //         destination: '/:path*',
+  //       },
+  //     ],
+  //   };
+  // },
 };
 
 module.exports = nextConfig;
