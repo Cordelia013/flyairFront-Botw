@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Tours from "../tours/Tours";
+import tours from "../tours/Tours";
 
 
 export default function Navigation(){
