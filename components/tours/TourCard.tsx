@@ -1,3 +1,6 @@
+
+import Image from 'next/image';
+
 type Tour = {
     id: number;
     title: string;
@@ -12,11 +15,12 @@ type Tour = {
     return (
       <div className="h-[45vh] bg-[rgba(217,217,217,0.1)] rounded-lg overflow-hidden shadow-lg">
         <div className="relative h-48">
-          <img 
-            src={tour.image} 
-            alt={tour.title}
-            className="w-full h-full object-cover"
-          />
+        <Image 
+  src={tour.image} 
+  alt={tour.title}
+  fill
+  className="object-cover w-full h-full"
+/>
         </div>
   
         <div className="p-6 group relative flex flex-col">

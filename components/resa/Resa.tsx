@@ -4,15 +4,21 @@
 import React, { useEffect, useState } from 'react';
 import { FlightCard, Flight } from './FlightCard';
 import Separator from './Separator';
-import { getDestinations } from '@/lib/sanity/sanity.client';
 
-// Séparateur visuel
-// const separator = (
-//   <div className="w-0.5 h-32 opacity-20 bg-zinc-300 rounded-full" />
-// );
+
 
 export default function Resa() {
     const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        setLoading(true);
+        // simule chargement :
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      }, []);
+      
     
     const flights: Flight[] = [
         {
