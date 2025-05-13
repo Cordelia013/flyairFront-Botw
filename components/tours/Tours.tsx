@@ -1,4 +1,4 @@
-
+'use client'
 
 // src/components/Tours.tsx
 import { useState, useEffect } from 'react';

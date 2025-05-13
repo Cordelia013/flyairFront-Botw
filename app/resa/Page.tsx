@@ -1,3 +1,5 @@
+
+'use client'
 // app/resa/page.tsx  
 import './resa.css';
 import Resa from "@/components/resa/Resa";
