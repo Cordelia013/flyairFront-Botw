@@ -11,20 +11,20 @@ import ConfigurableGrid from "@/components/ConfigurableGrid";
 const ppNeueMontreal = localFont({
   src: [
     {
-      path: './font/pp-neue-montreal/ppneuemontreal-thin.woff',
+      path: './font/PPNeueMontreal-Thin.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: './font/pp-neue-montreal/PPNeueMontreal-Medium.woff',
+      path: './font/PPNeueMontreal-Medium.woff2',
       weight: '500',
       style: 'normal',
     },
-    // {
-    //   path: '../public/font/pp-neue-montreal/PPNeueMontreal-Bold.woff',
-    //   weight: '700',
-    //   style: 'normal',
-    // }
+    {
+      path: './font/PPNeueMontreal-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    }
   ],
   variable: '--font-pp-neue-montreal',
   display: 'swap',
@@ -33,17 +33,17 @@ const ppNeueMontreal = localFont({
 const ppPangaia = localFont({
   src: [
     {
-      path: './font/pp-pangaia-webfont/PPangaia-Medium-BF654c530cc86d5.woff',
+      path: './font/PPPangaia-Medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: './font/pp-pangaia-webfont/PPangaia-MediumItalic.woff',
+      path: './font/PPPangaia-MediumItalic.woff2',
       weight: '500', 
       style: 'italic',
     },
     {
-      path: './font/pp-pangaia-webfont/PPangaia-UltralightItalic.woff', 
+      path: './font/PPPangaia-UltralightItalic.woff2', 
       weight: '100',
       style: 'italic',
     }
