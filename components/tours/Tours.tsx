@@ -23,9 +23,12 @@ export default function Tours() {
   }
 
   return (
-    <div className="mt-16">
-      <h1 className="text-4xl mb-10 uppercase">Tours</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
+    <div className="mt-3 min-h-screen w-full pb-20">
+      <div className="mt-20 mb-8 relative -top-16 -left-0 text-[96px]">
+        <h1 className="text-4xl mb-10 uppercase">Tours</h1>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-2 gap-y-4">
         {dataTours.map((tour) => (
           <TourCard key={tour.id} tour={tour} />
         ))}

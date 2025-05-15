@@ -11,9 +11,7 @@ import Homecontent from '@/app/home/Homecontent';
 export default function Home(): ReactNode {
   return (
     <>
-      <Container>
-        <Header />
-      </Container>
+    
       
       <Container>
         <Homecontent />

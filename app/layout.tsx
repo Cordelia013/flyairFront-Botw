@@ -1,13 +1,17 @@
+
+
 // app/layout.tsx
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from 'next/font/local';
 import "./globals.css";
 import "./mediaQueries.css";
 import "./home/home.css";
 
 import ConfigurableGrid from "@/components/ConfigurableGrid";
+import Header from "@/components/layout/Header";
+import Container from "@/components/layout/Container";
 
-// Définition des polices locales
+// Définition des polices locales avec préchargement optimisé
 const ppNeueMontreal = localFont({
   src: [
     {
@@ -28,6 +32,8 @@ const ppNeueMontreal = localFont({
   ],
   variable: '--font-pp-neue-montreal',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 const ppPangaia = localFont({
@@ -50,11 +56,21 @@ const ppPangaia = localFont({
   ],
   variable: '--font-pp-pangaia',
   display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 });
 
 export const metadata: Metadata = {
   title: "FlyAir - Voyagez en Corée",
   description: "Réservez des vols vers la Corée et découvrez ses plus beaux sites touristiques",
+  
+};
+
+// Nouvelle export pour le viewport
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#ffffff',
 };
 
 export default function RootLayout({
@@ -64,7 +80,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${ppPangaia.variable} ${ppNeueMontreal.variable}`}>
-      <body className="min-h-screen w-screen">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+      </head>
+      <body className=" w-screen">
+      <Container>
+        <Header />
+      </Container>  
         <main>
           {children}
         </main>

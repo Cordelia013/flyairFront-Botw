@@ -91,14 +91,16 @@ export default function Resa() {
         );
       }
     return (
-        <>
-            <div className="mt-18 mb-8 absolute -top-16 -left-0 xl:text-[96px]">
+        <div className="text-[#ededed]">
+            <div className="mt-20 mb-8 relative -top-16 -left-0 xl:text-[96px]">
                 <h1 className="text-4xl mb-10 uppercase">Reservations</h1>
             </div>
 
             <div className="mt-32">
                 <div className="grid grid-cols-12 gap-4 w-full h-screen">
                     <div className="col-span-2 rounded-lg min-h-[200px]  py-8">
+
+
                         <div className="space-y-6">
                             {filterData.map((filter, index) => (
                                 <div key={index}>
@@ -108,6 +110,7 @@ export default function Resa() {
                                 </div>
                             ))}
                         </div>
+
                     </div>                            
                     <div className="col-span-10 rounded-lg min-h-[200px] p-6">
                         <div className="flex items-center gap-2">
@@ -120,6 +123,6 @@ export default function Resa() {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 }

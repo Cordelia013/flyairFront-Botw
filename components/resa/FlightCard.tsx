@@ -45,7 +45,7 @@ export function FlightCard({ flight }: FlightCardProps) {
           <p className='text-center'>{flight.arrival.city} ({flight.arrival.airport})</p>   
         </div>
       </div>
-      <button type="submit" className="px-8 py-2 text-xl bg-black/50 rounded-4xl text-white ml-4">Search</button>
+      <button type="submit" className="px-8 py-2 text-xl bg-[#ededed] rounded-4xl text-black ml-4">Search</button>
     </div>
   );
 }

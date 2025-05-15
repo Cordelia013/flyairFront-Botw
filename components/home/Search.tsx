@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowDownIcon } from '@heroicons/react/24/solid'; // Ou une autre icône de votre choix
+import { ArrowDown, Search as SearchIcon, Menu, User, Settings, ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react'
 
 // Ajouter un type pour représenter les données du formulaire
 type SearchFormData = {
@@ -51,11 +51,11 @@ const Search: React.FC = () => {
 
   // Le séparateur
   const separator = (
-    <div className="w-0.5 h-32 opacity-20 bg-zinc-300 rounded-full" />
+    <div className="w-0.5 h-26 opacity-20 bg-zinc-300 rounded-full" />
   );
 
   return (
-    <div className="fixed bottom-0 left-1/2 flex-nowrap -translate-x-1/2 z-50 w-[calc(100vw-16px)]  mx-4 mb-8 flex items-center gap-2">
+    <div className="text-[#ededed] fixed bottom-0 left-1/2 flex-nowrap -translate-x-1/2 z-50 w-[calc(100vw-64px)]  mx-2 mb-8 flex items-center gap-2">
       <form onSubmit={handleSubmit} className="w-full h-30 px-8 py-2 text-xl rounded-[40px] flex justify-between items-center gap-4 bg-white/10">
         {fields.map((field, idx) => (
           <React.Fragment key={field.name}>
@@ -74,7 +74,7 @@ const Search: React.FC = () => {
                 />
                 {field.showIcon && (
                   <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                    <ArrowDownIcon className="w-3 h-3 text-black" />
+                  <ChevronDown color="#fff0f0" strokeWidth={1} />
                   </div>
                 )}
               </div>
@@ -83,9 +83,9 @@ const Search: React.FC = () => {
           </React.Fragment>
         ))}
       </form>
-      <button className="w-40 h-30 px-8 py-2 text-xl rounded-[40px] flex justify-between items-center gap-4 bg-black/50">
+      <button className="w h-30 p-8  uppercase text-4xl rounded-[40px] flex justify-between items-center gap-4  text-black bg-[#ededed] font-['PP_Neue_Montreal']">
         Search
-        <ArrowDownIcon className="w-3 h-3 text-white" />
+        <ArrowRight className="w-8 h-8 font-[--'PP Pangaia'] " />
       </button>
     </div>
   );

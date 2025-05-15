@@ -8,7 +8,7 @@ import Header from "@/components/layout/Header";
 export default function ResaPage() {
   return (
     <Container>
-      <Header />
+    
       <main className="resa-page">
         <Resa />
       </main>
